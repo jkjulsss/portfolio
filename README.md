@@ -1,2 +1,1 @@
-# beaudelaire.ca
-My portfolio codebase
+work-in-progress
