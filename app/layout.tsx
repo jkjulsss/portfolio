@@ -2,6 +2,7 @@ import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@nextui-org/link";
 import { MdHeartBroken } from "react-icons/md";
+import dynamic from "next/dynamic";
 
 import { Providers } from "./providers";
 
@@ -26,6 +27,10 @@ export const viewport: Viewport = {
   ],
 };
 
+const PostHogPageView = dynamic(() => import("./PostHogPageView"), {
+  ssr: false,
+});
+
 export default function RootLayout({
   children,
 }: {
@@ -36,6 +41,7 @@ export default function RootLayout({
       <head />
       <body className="min-h-screen antialiased">
         <Providers themeProps={{ attribute: "class", forcedTheme: "light" }}>
+          <PostHogPageView />
           <div className="relative flex flex-col h-screen">
             <Navbar />
             <main className="container mx-auto max-w-2xl pt-10 px-6 flex-grow">

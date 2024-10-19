@@ -15,12 +15,11 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
   Link,
-  Button,
   Image,
   NavbarProps,
 } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
-import {useReducer} from "react";
+import { useReducer } from "react";
 
 const menuItems = ["Home", "Work", "Projects"];
 
@@ -30,7 +29,8 @@ export default function Navbar(props: NavbarProps) {
 
   return (
     <NextUiNavbar
-        isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}
+      isMenuOpen={isMenuOpen}
+      onMenuOpenChange={setIsMenuOpen}
       {...props}
       classNames={{
         base: "py-4 backdrop-filter-none bg-transparent",
@@ -131,7 +131,14 @@ export default function Navbar(props: NavbarProps) {
       >
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="w-full text-black hover:text-primary" href={item.toLowerCase() == "home" ? "/" : `/${item}`.toLowerCase()} size="md" onPress={() => setIsMenuOpen()}>
+            <Link
+              className="w-full text-black hover:text-primary"
+              href={
+                item.toLowerCase() == "home" ? "/" : `/${item}`.toLowerCase()
+              }
+              size="md"
+              onPress={() => setIsMenuOpen()}
+            >
               {item}
             </Link>
           </NavbarMenuItem>

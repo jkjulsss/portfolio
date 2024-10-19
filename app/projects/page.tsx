@@ -125,11 +125,13 @@ const moreProjects = [
     title: "TA Beaudelaire",
     url: "https://ta.beaudelaire.ca",
     description: "My TA website",
-  },{
+  },
+  {
     title: "Restart",
     url: "https://github.com/Tsounguinzo/Restart",
     description: "Meditating song IOS app",
-  },{
+  },
+  {
     title: "Predictor",
     url: "https://github.com/Tsounguinzo/airline_tickets",
     description: "ML project to predict airline tickets price",
