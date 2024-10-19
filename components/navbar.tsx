@@ -20,14 +20,17 @@ import {
   NavbarProps,
 } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
+import {useReducer} from "react";
 
 const menuItems = ["Home", "Work", "Projects"];
 
 export default function Navbar(props: NavbarProps) {
   const pathname = usePathname();
+  const [isMenuOpen, setIsMenuOpen] = useReducer((current) => !current, false);
 
   return (
     <NextUiNavbar
+        isMenuOpen={isMenuOpen} onMenuOpenChange={setIsMenuOpen}
       {...props}
       classNames={{
         base: "py-4 backdrop-filter-none bg-transparent",
@@ -103,14 +106,13 @@ export default function Navbar(props: NavbarProps) {
           </Link>
         </NavbarItem>
         <NavbarItem className="ml-2 !flex">
-          <Button
-            className="text-black flex gap-2 hover:text-foreground-900 text-medium"
-            radius="full"
-            variant="flat"
+          <Link
+            className="text-black flex gap-2 hover:text-foreground-900 text-medium mx-2 p-2 bg-gray-300 rounded-full"
+            href="mailto:beaudelaire.dev@gmail.com"
           >
             <LuMessageCircle />
             Say Hi
-          </Button>
+          </Link>
         </NavbarItem>
       </NavbarContent>
 
@@ -129,7 +131,7 @@ export default function Navbar(props: NavbarProps) {
       >
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
-            <Link className="w-full text-default-500" href="#" size="md">
+            <Link className="w-full text-black hover:text-primary" href={item.toLowerCase() == "home" ? "/" : `/${item}`.toLowerCase()} size="md" onPress={() => setIsMenuOpen()}>
               {item}
             </Link>
           </NavbarMenuItem>

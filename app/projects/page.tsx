@@ -93,7 +93,7 @@ const projects: ProjectProps[] = [
     title: "Concordia groups",
     description:
       "Interface to join and create groups study groups for students at Concordia University.",
-    stats: [{ label: "Users", value: "5000+" }],
+    stats: [{ label: "Users", value: "5K+" }],
     links: [
       { label: "Website", url: "https://concordia-groups.web.app/search" },
       {
@@ -125,6 +125,14 @@ const moreProjects = [
     title: "TA Beaudelaire",
     url: "https://ta.beaudelaire.ca",
     description: "My TA website",
+  },{
+    title: "Restart",
+    url: "https://github.com/Tsounguinzo/Restart",
+    description: "Meditating song IOS app",
+  },{
+    title: "Predictor",
+    url: "https://github.com/Tsounguinzo/airline_tickets",
+    description: "ML project to predict airline tickets price",
   },
 ];
 

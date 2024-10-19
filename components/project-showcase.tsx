@@ -214,7 +214,7 @@ export default function ProjectShowcase({
             isExternal
             className="font-medium underline decoration-2 underline-offset-2 transition-colors hover:font-bold"
             color={"foreground"}
-            href="https://github.com/kamranahmedse"
+            href="https://github.com/Tsounguinzo"
           >
             GitHub profile
           </Link>
@@ -224,7 +224,7 @@ export default function ProjectShowcase({
             <Link
               key={index}
               isExternal
-              className="flex flex-col flex-wrap items-start rounded-md bg-gray-300 px-2 py-2 transition-colors hover:bg-gray-300/40 sm:flex-row sm:items-center"
+              className="flex flex-col flex-wrap items-start rounded-md bg-gray-300 bg-gradient-to-l from-background px-2 py-2 transition-colors hover:bg-gray-300/40 sm:flex-row sm:items-center"
               color={"foreground"}
               href={project.url}
             >
