@@ -1,6 +1,14 @@
 import { FaGithub } from "react-icons/fa";
 
 import ProjectShowcase, { ProjectProps } from "@/components/project-showcase";
+import {Metadata} from "next";
+import {constructMetadata} from "@/utils";
+
+export const metadata: Metadata = constructMetadata({
+  title: "Projects",
+  description: "Projects I have worked on",
+  canonical: "/projects",
+});
 
 const projects: ProjectProps[] = [
   {

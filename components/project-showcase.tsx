@@ -1,14 +1,14 @@
 "use client";
 
-import { Card, Button, useDisclosure } from "@nextui-org/react";
-import { Image } from "@nextui-org/react";
 import {
   Modal,
   ModalBody,
   ModalContent,
   ModalFooter,
   ModalHeader,
-} from "@nextui-org/modal";
+  Image,
+  Card, Button, useDisclosure
+} from "@nextui-org/react";
 import { ReactNode, useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { BsArrowThroughHeartFill, BsGlobe } from "react-icons/bs";

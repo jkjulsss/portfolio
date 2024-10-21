@@ -1,11 +1,13 @@
-import { Card, Button, useDisclosure } from "@nextui-org/react";
+"use client";
+
 import {
   Modal,
   ModalBody,
   ModalContent,
   ModalFooter,
   ModalHeader,
-} from "@nextui-org/modal";
+  Card, Button, useDisclosure
+} from "@nextui-org/react";
 import { useState } from "react";
 import { PiFinnTheHumanDuotone } from "react-icons/pi";
 

@@ -9,6 +9,15 @@ module.exports = {
   ],
   theme: {
     extend: {
+      keyframes: {
+        bgFade: {
+          '0%': { backgroundColor: "#D2DFFD" },
+          '100%': { backgroundColor: 'transparent' },
+        },
+      },
+      animation: {
+        'bg-fade': 'bgFade .5s ease-in-out',
+      },
       fontFamily: {
         sans: ["Josefin Sans"],
         mono: ["var(--font-mono)"],
