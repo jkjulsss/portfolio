@@ -11,21 +11,21 @@ const defaultMetadata = {
 };
 
 export const constructMetadata = ({
-                                    title,
-                                    description = defaultMetadata.description,
-                                    canonical = "/",
-                                    ogImage = "beaudelaire.jpeg",
-                                  }: MetadataProps) => {
+  title,
+  description = defaultMetadata.description,
+  canonical = "/",
+  ogImage = "beaudelaire.jpeg",
+}: MetadataProps) => {
   return {
     metadataBase: new URL("https://beaudelaire.ca/"),
     title: title ? `${title} - Beaudelaire` : defaultMetadata.title,
     description,
     keywords: [
       "portfolio",
-        "beaudelaire",
-        "tsoungui",
-        "nzodoumkouo",
-        "beaudelaire tsoungui nzodoumkouo",
+      "beaudelaire",
+      "tsoungui",
+      "nzodoumkouo",
+      "beaudelaire tsoungui nzodoumkouo",
     ],
     alternates: {
       canonical,
@@ -34,7 +34,7 @@ export const constructMetadata = ({
       {
         name: "Beaudelaire Tsoungui Nzodoumkouo",
         url: "https://github.com/TsounguiNzo",
-      }
+      },
     ],
     openGraph: {
       title,

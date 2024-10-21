@@ -19,7 +19,9 @@ const Hidden = ({ content }: { content: ReactNode }) => {
           onClick={handleClick}
         />
       ) : (
-        <span className="inline animate-fadeIn text-primary animate-bg-fade p-1 rounded-md">{content}</span>
+        <span className="inline animate-fadeIn text-primary animate-bg-fade p-1 rounded-md">
+          {content}
+        </span>
       )}
     </span>
   );

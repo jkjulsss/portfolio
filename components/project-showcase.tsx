@@ -7,7 +7,9 @@ import {
   ModalFooter,
   ModalHeader,
   Image,
-  Card, Button, useDisclosure
+  Card,
+  Button,
+  useDisclosure,
 } from "@nextui-org/react";
 import { ReactNode, useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";

@@ -1,8 +1,8 @@
 import { FaGithub } from "react-icons/fa";
+import { Metadata } from "next";
 
 import ProjectShowcase, { ProjectProps } from "@/components/project-showcase";
-import {Metadata} from "next";
-import {constructMetadata} from "@/utils";
+import { constructMetadata } from "@/utils";
 
 export const metadata: Metadata = constructMetadata({
   title: "Projects",

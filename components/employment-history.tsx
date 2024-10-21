@@ -6,7 +6,9 @@ import {
   ModalContent,
   ModalFooter,
   ModalHeader,
-  Card, Button, useDisclosure
+  Card,
+  Button,
+  useDisclosure,
 } from "@nextui-org/react";
 import { useState } from "react";
 import { PiFinnTheHumanDuotone } from "react-icons/pi";

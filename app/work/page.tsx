@@ -1,15 +1,15 @@
+import { Metadata } from "next";
+
 import EmploymentHistory, {
   EmploymentProps,
 } from "@/components/employment-history";
-import {constructMetadata} from "@/utils";
-import {Metadata} from "next";
+import { constructMetadata } from "@/utils";
 
 export const metadata: Metadata = constructMetadata({
   title: "Work",
   description: "My work experience and history.",
   canonical: "/work",
 });
-
 
 const employments: EmploymentProps[] = [
   {
