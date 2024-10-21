@@ -13,6 +13,7 @@ import { ReactNode, useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { BsArrowThroughHeartFill, BsGlobe } from "react-icons/bs";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
+
 import { LinkPreview } from "@/components/link-preview";
 
 export type ProjectProps = {
@@ -49,24 +50,6 @@ const ProjectCard = ({
     if (newIndex >= 0 && newIndex < highlights.length) {
       setCurrentImageIndex(newIndex);
     }
-  };
-
-  let touchStartX: number | null = null;
-
-  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
-    touchStartX = e.touches[0].clientX;
-  };
-
-  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
-    if (!touchStartX) return;
-    let touchEndX = e.touches[0].clientX;
-
-    if (touchStartX - touchEndX > 50) {
-      updateIndex(currentImageIndex + 1);
-    } else if (touchEndX - touchStartX > 50) {
-      updateIndex(currentImageIndex - 1);
-    }
-    touchStartX = null;
   };
 
   return (
@@ -173,8 +156,6 @@ const ProjectCard = ({
                 alt={title}
                 className="w-full rounded-lg"
                 src={highlights[currentImageIndex].imageUrl}
-                onTouchMove={(e) => handleTouchMove(e)}
-                onTouchStart={(e) => handleTouchStart(e)}
               />
             </div>
           </div>
