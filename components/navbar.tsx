@@ -53,7 +53,7 @@ export default function Navbar(props: NavbarProps) {
       height="54px"
     >
       <NavbarContent
-        className="gap-4 rounded-full border-small border-default-200/20 bg-background/60 px-2 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
+        className="gap-8 rounded-full border-small border-default-200/20 bg-background/60 px-2 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
         justify="center"
       >
         {/* Toggle */}
@@ -107,10 +107,10 @@ export default function Navbar(props: NavbarProps) {
         </NavbarItem>
         <NavbarItem className="ml-2 !flex">
           <Link
-            className="text-black flex gap-2 hover:text-foreground-900 text-medium mx-2 p-2 bg-gray-300 rounded-full"
-            href="mailto:beaudelaire.dev@gmail.com"
+            className="text-black flex gap-2 hover:text-foreground-900 text-medium ml-3 bg-gray-300 rounded-full px-3 py-3"
+            href="https://cal.com/beaudelaire.ca"
           >
-            <LuMessageCircle />
+            <LuMessageCircle size={20} />
             Say Hi
           </Link>
         </NavbarItem>

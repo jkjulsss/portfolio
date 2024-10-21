@@ -33,7 +33,7 @@ export default function Home() {
       <div className="flex flex-col space-y-6">
         <h1 className="text-4xl font-bold">Hello!</h1>
         <p className="text-lg">
-          I`&apos;m Beaudelaire, A SOEN Student at Concordia, Montreal.
+          I&apos;m Beaudelaire, A SOEN Student at Concordia, Montreal.
         </p>
         <p className="text-lg">
           I mostly do Full-stack development with an eye for good design and
@@ -41,7 +41,7 @@ export default function Home() {
           backend, databases, devops, and cloud.
         </p>
         <p className="text-lg">
-          I`&apos;ll write more about myself here soon.{" "}
+          I&apos;ll write more about myself here soon.{" "}
           <Hidden
             content={
               <>

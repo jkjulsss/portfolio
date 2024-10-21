@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 
+import { LinkPreview } from "@/components/link-preview";
+
 type Node = {
   name: string;
   description?: string;
@@ -26,10 +28,10 @@ export default function Links({ heading, links, moreInfo }: LinksProps) {
       {/* Links */}
       <ul className="space-y-4">
         {links.map((link, index) => (
-          <a
+          <LinkPreview
             key={index}
             className="flex justify-between items-baseline pb-4 group transition-colors"
-            href={link.url}
+            url={link.url}
           >
             <div>
               <p className="text-lg group-hover:text-primary">{link.name}</p>
@@ -41,7 +43,7 @@ export default function Links({ heading, links, moreInfo }: LinksProps) {
             </div>
             <p className="w-full h-full border-b border-dashed border-gray-400 group-hover:border-primary mx-3" />
             <span className="group-hover:text-primary">{link.icon}</span>
-          </a>
+          </LinkPreview>
         ))}
       </ul>
       {/* (Optional) */}

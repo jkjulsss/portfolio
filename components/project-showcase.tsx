@@ -13,7 +13,7 @@ import { ReactNode, useState } from "react";
 import { IoIosArrowDown, IoIosArrowUp } from "react-icons/io";
 import { BsArrowThroughHeartFill, BsGlobe } from "react-icons/bs";
 import { FaAngleLeft, FaAngleRight } from "react-icons/fa";
-import { Link } from "@nextui-org/link";
+import { LinkPreview } from "@/components/link-preview";
 
 export type ProjectProps = {
   title: string;
@@ -49,6 +49,24 @@ const ProjectCard = ({
     if (newIndex >= 0 && newIndex < highlights.length) {
       setCurrentImageIndex(newIndex);
     }
+  };
+
+  let touchStartX: number | null = null;
+
+  const handleTouchStart = (e: React.TouchEvent<HTMLDivElement>) => {
+    touchStartX = e.touches[0].clientX;
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (!touchStartX) return;
+    let touchEndX = e.touches[0].clientX;
+
+    if (touchStartX - touchEndX > 50) {
+      updateIndex(currentImageIndex + 1);
+    } else if (touchEndX - touchStartX > 50) {
+      updateIndex(currentImageIndex - 1);
+    }
+    touchStartX = null;
   };
 
   return (
@@ -111,16 +129,14 @@ const ProjectCard = ({
           </div>
           <div className="flex items-center gap-3 text-gray-500">
             {links.map((link, index) => (
-              <Link
+              <LinkPreview
                 key={index}
-                isExternal
                 className="flex items-center gap-1 rounded-lg py-1 text-base transition-colors hover:font-bold sm:text-sm"
-                color={"foreground"}
-                href={link.url}
+                url={link.url}
               >
                 {link.icon ?? <BsGlobe />}
                 <span className="hidden sm:inline-block">{link.label}</span>
-              </Link>
+              </LinkPreview>
             ))}
           </div>
         </div>
@@ -157,6 +173,8 @@ const ProjectCard = ({
                 alt={title}
                 className="w-full rounded-lg"
                 src={highlights[currentImageIndex].imageUrl}
+                onTouchMove={(e) => handleTouchMove(e)}
+                onTouchStart={(e) => handleTouchStart(e)}
               />
             </div>
           </div>
@@ -210,23 +228,19 @@ export default function ProjectShowcase({
         <h3 className="my-4">
           Here are some more projects that I have worked on. You can find the
           complete list of projects on my{" "}
-          <Link
-            isExternal
+          <LinkPreview
             className="font-medium underline decoration-2 underline-offset-2 transition-colors hover:font-bold"
-            color={"foreground"}
-            href="https://github.com/Tsounguinzo"
+            url="https://github.com/Tsounguinzo"
           >
             GitHub profile
-          </Link>
+          </LinkPreview>
         </h3>
         <div className="flex flex-col gap-1.5">
           {moreProjects.map((project, index) => (
-            <Link
+            <LinkPreview
               key={index}
-              isExternal
               className="flex flex-col flex-wrap items-start rounded-md bg-gray-300 bg-gradient-to-l from-background px-2 py-2 transition-colors hover:bg-gray-300/40 sm:flex-row sm:items-center"
-              color={"foreground"}
-              href={project.url}
+              url={project.url}
             >
               <span className="flex items-center gap-2 font-medium">
                 <BsArrowThroughHeartFill />
@@ -236,7 +250,7 @@ export default function ProjectShowcase({
               <span className="text-base sm:text-lg">
                 {project.description}
               </span>
-            </Link>
+            </LinkPreview>
           ))}
         </div>
       </div>

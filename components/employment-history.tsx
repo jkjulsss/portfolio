@@ -80,7 +80,7 @@ const EmploymentCard = ({
         {additionalInfo && (
           <>
             <Button
-              className={`flex items-center justify-center bg-gray-300 px-1 mb-2 text-sm font-normal transition-colors hover:bg-gray-400 hover:font-bold hover:opacity-100 w-full bg-gradient-to-l from-background py-2 sm:py-1.5`}
+              className={`flex items-center justify-center bg-gray-300 px-1 mb-2 text-sm font-normal transition-colors hover:bg-gray-400 hover:font-bold hover:opacity-100 w-full py-2 sm:py-1.5 ${showAdditionalInfo ? "bg-gradient-to-r" : "bg-gradient-to-l"} from-background`}
               onPress={() => setShowAdditionalInfo(!showAdditionalInfo)}
             >
               <PiFinnTheHumanDuotone size={24} />
