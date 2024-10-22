@@ -92,12 +92,12 @@ const ProjectCard = ({
             {stats.map((stat, index) => (
               <div
                 key={index}
-                className="rouded-md flex flex-grow flex-col rounded-lg bg-gradient-to-b from-gray-400/40 px-3 py-3"
+                className="rouded-md flex flex-grow flex-col rounded-lg bg-gradient-to-b from-primary-200/40 px-3 py-3"
               >
                 <span className="mb-1 text-xs uppercase tracking-wide">
                   {stat.label}
                 </span>
-                <span className="text-gray-600 text-xl">{stat.value}</span>
+                <span className="text-primary-600 text-xl">{stat.value}</span>
               </div>
             ))}
           </div>
@@ -105,14 +105,14 @@ const ProjectCard = ({
         <div className="-mx-3 -mb-3 -mt-3 flex items-center justify-between p-3">
           <div>
             <button
-              className="flex items-center gap-1 rounded-lg py-2 pl-2 pr-2 text-sm hover:bg-gray-600/60 sm:py-1 sm:pr-3 bg-gray-600/40"
+              className="flex items-center gap-1 rounded-lg py-2 pl-2 pr-2 text-sm hover:bg-primary-300/60 sm:py-1 sm:pr-3 bg-primary-300/40"
               onClick={toggleHighlights}
             >
               {showHighlights ? <IoIosArrowUp /> : <IoIosArrowDown />}
               <span className="hidden sm:inline-block">Highlights</span>
             </button>
           </div>
-          <div className="flex items-center gap-3 text-gray-500">
+          <div className="flex items-center gap-3 text-primary-300">
             {links.map((link, index) => (
               <LinkPreview
                 key={index}
@@ -126,13 +126,13 @@ const ProjectCard = ({
           </div>
         </div>
         {showHighlights && (
-          <div className="-mx-3 -mb-3 mt-2 bg-gradient-to-b to-gray-900 p-3">
+          <div className="-mx-3 -mb-3 mt-2 bg-gradient-to-b to-primary-900 p-3">
             <div className="flex items-center gap-2 sm:gap-0 justify-between sm:flex-row flex-row">
               <div className="relative flex flex-row items-center gap-2">
                 {highlights.map((highlight, index) => (
                   <span
                     key={index}
-                    className={`rounded-full bg-gray-400 ${index === currentImageIndex ? "px-3 py-0.5" : "w-3 h-3"} text-sm`}
+                    className={`rounded-full bg-primary-200 ${index === currentImageIndex ? "px-3 py-0.5" : "w-3 h-3"} text-sm`}
                   >
                     {index === currentImageIndex ? highlight.title : ""}
                   </span>
@@ -140,13 +140,13 @@ const ProjectCard = ({
               </div>
               <div className="flex items-center gap-1">
                 <button
-                  className="rounded-lg bg-gray-300 p-1 hover:bg-gray-400"
+                  className="rounded-lg bg-primary-200 p-1 hover:bg-primary-300"
                   onClick={() => updateIndex(currentImageIndex - 1)}
                 >
                   <FaAngleLeft />
                 </button>
                 <button
-                  className="rounded-lg bg-gray-300 p-1 hover:bg-gray-400"
+                  className="rounded-lg bg-primary-200 p-1 hover:bg-primary-300"
                   onClick={() => updateIndex(currentImageIndex + 1)}
                 >
                   <FaAngleRight />
@@ -222,7 +222,7 @@ export default function ProjectShowcase({
           {moreProjects.map((project, index) => (
             <LinkPreview
               key={index}
-              className="flex flex-col flex-wrap items-start rounded-md bg-gray-300 bg-gradient-to-l from-background px-2 py-2 transition-colors hover:bg-gray-300/40 sm:flex-row sm:items-center"
+              className="flex flex-col flex-wrap items-start rounded-md bg-primary-100 bg-gradient-to-l from-background px-2 py-2 transition-colors hover:bg-primary-100/40 sm:flex-row sm:items-center"
               url={project.url}
             >
               <span className="flex items-center gap-2 font-medium">

@@ -75,7 +75,7 @@ const EmploymentCard = ({
           {tags.map((tag, index) => (
             <div
               key={index}
-              className="w-fit h-fit px-1.5 text-sm border-2 border-gray-500 rounded-full"
+              className="w-fit h-fit px-1.5 text-sm border-2 border-primary-500 rounded-full"
             >
               {tag}
             </div>
@@ -84,7 +84,7 @@ const EmploymentCard = ({
         {additionalInfo && (
           <>
             <Button
-              className={`flex items-center justify-center bg-gray-300 px-1 mb-2 text-sm font-normal transition-colors hover:bg-gray-400 hover:font-bold hover:opacity-100 w-full py-2 sm:py-1.5 ${showAdditionalInfo ? "bg-gradient-to-r" : "bg-gradient-to-l"} from-background`}
+              className={`flex items-center justify-center bg-primary-300 px-1 mb-2 text-sm font-normal transition-colors hover:bg-primary-400 hover:font-bold hover:opacity-100 w-full py-2 sm:py-1.5 ${showAdditionalInfo ? "bg-gradient-to-r" : "bg-gradient-to-l"} from-background`}
               onPress={() => setShowAdditionalInfo(!showAdditionalInfo)}
             >
               <PiFinnTheHumanDuotone size={24} />
@@ -95,7 +95,7 @@ const EmploymentCard = ({
                 {additionalInfo.map((info, index) => (
                   <li
                     key={index}
-                    className="bg-gray-300 px-1 font-normal bg-gradient-to-l from-background py-2 sm:py-1.5 rounded-md"
+                    className="bg-primary-100 px-1 font-normal bg-gradient-to-l from-background py-2 sm:py-1.5 rounded-md"
                   >
                     {info}
                   </li>

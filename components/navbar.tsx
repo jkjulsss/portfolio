@@ -107,7 +107,7 @@ export default function Navbar(props: NavbarProps) {
         </NavbarItem>
         <NavbarItem className="ml-2 !flex">
           <Link
-            className="text-black flex gap-2 hover:text-foreground-900 text-medium ml-3 bg-gray-300 rounded-full px-3 py-3"
+            className="text-black flex gap-2 hover:text-foreground-900 text-medium ml-3 bg-[#4D869C]/40 rounded-full px-3 py-3"
             href="https://cal.com/beaudelaire.ca"
           >
             <LuMessageCircle size={20} />
