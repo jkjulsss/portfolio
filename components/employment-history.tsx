@@ -25,7 +25,7 @@ export type EmploymentProps = {
   additionalInfo?: string[];
   badgeInfo?: {
     title: string;
-    content: string;
+    content: string[];
   };
 };
 
@@ -63,7 +63,7 @@ const EmploymentCard = ({
           </h3>
           {badgeText && badgeInfo && (
             <Button
-              className="w-fit h-fit p-1 bg-primary/80 text-white"
+              className="w-fit h-fit p-1.5 text-green-600 border-2 border-green-600 border-dotted bg-background hover:border-green-500 hover:text-green-500"
               onPress={onBadgeModalOpen}
             >
               {badgeText}
@@ -110,6 +110,8 @@ const EmploymentCard = ({
         isOpen={isBadgeModalOpen}
         placement={"auto"}
         onOpenChange={onBadgeModalOpenChange}
+        backdrop="blur"
+        className="bg-background"
       >
         <ModalContent>
           {(onClose) => (
@@ -118,7 +120,9 @@ const EmploymentCard = ({
                 {badgeInfo?.title}
               </ModalHeader>
               <ModalBody>
-                <p>{badgeInfo?.content}</p>
+                {badgeInfo?.content.map((content, index) => (
+                    <p key={index}>{content}</p>
+                    ))};
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>

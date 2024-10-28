@@ -11,7 +11,7 @@ module.exports = {
     extend: {
       keyframes: {
         bgFade: {
-          '0%': { backgroundColor: "#D2DFFD" },
+          '0%': { backgroundColor: "#a7cad7" },
           '100%': { backgroundColor: 'transparent' },
         },
       },

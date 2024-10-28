@@ -135,6 +135,11 @@ const moreProjects = [
     description: "My TA website",
   },
   {
+    title: "concordia.nexus",
+    url: "https://concordia.nexus",
+    description: "Listing of good resources for Concordia students",
+  },
+  {
     title: "Restart",
     url: "https://github.com/Tsounguinzo/Restart",
     description: "Meditating song IOS app",
