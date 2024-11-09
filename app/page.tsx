@@ -5,6 +5,7 @@ import Links from "@/components/links";
 import Recommendations from "@/components/recommendations";
 import testimonials from "@/data/testimonials.json";
 import Hidden from "@/components/hidden";
+import FlyfastCard from "@/components/flyfast-card";
 
 const socialLinks = {
   heading: "Social",
@@ -54,6 +55,8 @@ export default function Home() {
           />
         </p>
       </div>
+
+      <FlyfastCard/>
 
       <Links {...socialLinks} />
 
