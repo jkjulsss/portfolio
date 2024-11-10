@@ -107,11 +107,11 @@ const EmploymentCard = ({
       </Card>
       {/* Modal for badge text details */}
       <Modal
+        backdrop="blur"
+        className="bg-background"
         isOpen={isBadgeModalOpen}
         placement={"auto"}
         onOpenChange={onBadgeModalOpenChange}
-        backdrop="blur"
-        className="bg-background"
       >
         <ModalContent>
           {(onClose) => (
@@ -121,8 +121,9 @@ const EmploymentCard = ({
               </ModalHeader>
               <ModalBody>
                 {badgeInfo?.content.map((content, index) => (
-                    <p key={index}>{content}</p>
-                    ))};
+                  <p key={index}>{content}</p>
+                ))}
+                ;
               </ModalBody>
               <ModalFooter>
                 <Button color="danger" variant="light" onPress={onClose}>

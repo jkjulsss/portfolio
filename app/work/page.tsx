@@ -30,10 +30,10 @@ const employments: EmploymentProps[] = [
     badgeInfo: {
       title: "Why am I a TA?",
       content: [
-          "In high school, I earned the nickname \"JJ-Particle\" because of my grasp of physics, math, and chemistry. I often helped classmates prepare for GCE A-Levels, guiding them through concepts, labs, and experiments.",
-          "As an international student at Concordia, paying around 20K CAD per semester, I quickly realized that many TAs didn’t meet the quality of instruction students deserved. Only a handful of tutorials were genuinely effective, and I often learned more from these than in actual classes.",
-          "To change this, I set out to help fellow students. I built my own website with detailed slides and created a custom check-in system for lab sessions. When I grade, I use a personalized review platform, featuring high-quality illustrations to break down algorithms in courses like Data Structures and Algorithms (DSA)."
-      ]
+        'In high school, I earned the nickname "JJ-Particle" because of my grasp of physics, math, and chemistry. I often helped classmates prepare for GCE A-Levels, guiding them through concepts, labs, and experiments.',
+        "As an international student at Concordia, paying around 20K CAD per semester, I quickly realized that many TAs didn’t meet the quality of instruction students deserved. Only a handful of tutorials were genuinely effective, and I often learned more from these than in actual classes.",
+        "To change this, I set out to help fellow students. I built my own website with detailed slides and created a custom check-in system for lab sessions. When I grade, I use a personalized review platform, featuring high-quality illustrations to break down algorithms in courses like Data Structures and Algorithms (DSA).",
+      ],
     },
   },
   {

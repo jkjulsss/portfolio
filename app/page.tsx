@@ -56,7 +56,7 @@ export default function Home() {
         </p>
       </div>
 
-      <FlyfastCard/>
+      <FlyfastCard />
 
       <Links {...socialLinks} />
 
