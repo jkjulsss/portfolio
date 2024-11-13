@@ -12,6 +12,60 @@ export const metadata: Metadata = constructMetadata({
 
 const projects: ProjectProps[] = [
   {
+    title: "FlyFast",
+    description:
+        "Flight search engine that finds the best time to fly at the lowest fare.",
+    stats: [
+      { label: "Users", value: "2k+" },
+      { label: "Flights Search", value: "100K+" },
+      { label: "Deals Search", value: "8M+" },
+    ],
+    links: [{ label: "Website", url: "https://flyfast.io" }],
+    highlights: [
+      {
+        imageUrl: "/projects/flyfast/home-flights.png",
+        title: "Home Flights",
+      },
+      {
+        imageUrl: "/projects/flyfast/home-deals.png",
+        title: "Home Deals",
+      },
+      {
+        imageUrl: "/projects/flyfast/flights.png",
+        title: "Flights Search",
+      },
+      {
+        imageUrl: "/projects/flyfast/flights-table.png",
+        title: "Flights Table View",
+      },
+      {
+        imageUrl: "/projects/flyfast/deals.png",
+        title: "Deals Search",
+      },
+      {
+        imageUrl: "/projects/flyfast/deals-cards.png",
+        title: "Deals Search Groups",
+      },
+      {
+        imageUrl: "/projects/flyfast/routes.png",
+        title: "Deals Routes",
+      },
+      {
+        imageUrl: "/projects/flyfast/routes-table.png",
+        title: "Routes table view",
+      },
+      {
+        imageUrl: "/projects/flyfast/dashboard.png",
+        title: "Dashboard",
+      },
+      {
+        imageUrl: "/projects/flyfast/dashboard-payment.png",
+        title: "Dashboard Payment",
+      },
+    ],
+    logoUrl: "/projects/flyfast/flyfast.png",
+  },
+  {
     title: "Flymile",
     description:
       "Flight search engine designed for credit card points enthusiasts.",
@@ -97,35 +151,6 @@ const projects: ProjectProps[] = [
     ],
     logoUrl: "/projects/concordia-courses/concordia-courses.png",
   },
-  {
-    title: "Concordia groups",
-    description:
-      "Interface to join and create groups study groups for students at Concordia University.",
-    stats: [{ label: "Users", value: "5K+" }],
-    links: [
-      { label: "Website", url: "https://concordia-groups.web.app/search" },
-      {
-        label: "Github",
-        url: "https://github.com/Tsounguinzo/concordia-groups",
-        icon: <FaGithub />,
-      },
-    ],
-    highlights: [
-      {
-        imageUrl: "/projects/concordia-groups/home.png",
-        title: "Home",
-      },
-      {
-        imageUrl: "/projects/concordia-groups/join.png",
-        title: "Join Group",
-      },
-      {
-        imageUrl: "/projects/concordia-groups/create-group.png",
-        title: "New Group",
-      },
-    ],
-    logoUrl: "/projects/concordia-groups/concordia-groups.png",
-  },
 ];
 
 const moreProjects = [
@@ -133,6 +158,11 @@ const moreProjects = [
     title: "TA Beaudelaire",
     url: "https://ta.beaudelaire.ca",
     description: "My TA website",
+  },
+  {
+    title: "Concordia groups",
+    url: "https://concordia-groups.web.app/search",
+    description: "Study groups for Concordia students",
   },
   {
     title: "concordia.nexus",

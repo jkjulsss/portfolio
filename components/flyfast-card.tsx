@@ -1,5 +1,5 @@
 const FlyfastCard = ({
-  title = "Time is Money. FlyFast Saves You Both!",
+  title = "Find the Best Time to Fly at the Lowest Fare!",
   subtitle = "Your cheap flight deal finder with exclusive travel deals, flexible options, and live search.",
   logo = "FlyFast.io",
   showSaleBadge = true,
