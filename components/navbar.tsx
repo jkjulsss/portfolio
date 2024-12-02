@@ -56,8 +56,6 @@ export default function Navbar(props: NavbarProps) {
         className="gap-5 md:gap-8 rounded-full border-small border-default-200/20 bg-background/60 pl-2 pr-1 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
         justify="center"
       >
-        {/* Toggle */}
-        <NavbarMenuToggle className="ml-2 text-default-400 md:hidden" />
 
         {/* Logo */}
         <NavbarBrand className="mr-2 w-[40vw] md:w-auto md:max-w-fit">
@@ -65,85 +63,26 @@ export default function Navbar(props: NavbarProps) {
             <Image
               alt="Logo"
               className="h-10 w-10 rounded-full"
-              src="/beaudelaire.jpeg"
+              src="https://media.licdn.com/dms/image/v2/D4E03AQHDyHdZvyBx1A/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1684182362657?e=1737590400&v=beta&t=T9LYfg65Hni0DWdcaq7WcjkuJ9v1vvRqMnRvT44ASs8"
             />
           </div>
-          <span className="ml-2 font-medium md:hidden">Beaudelaire</span>
+          <span className="ml-2 font-medium md:hidden">Julius</span>
         </NavbarBrand>
 
         {/* Items */}
-        <NavbarItem className="hidden md:flex" isActive={pathname === "/"}>
-          <Link
-            className="text-black flex gap-2 hover:text-foreground-900"
-            href="/"
-            size="md"
-          >
-            <LuHome />
-            Home
-          </Link>
-        </NavbarItem>
-        <NavbarItem className="hidden md:flex" isActive={pathname === "/work"}>
-          <Link
-            className="text-black flex gap-2 hover:text-foreground-900"
-            href="/work"
-            size="md"
-          >
-            <LuLuggage />
-            Work
-          </Link>
-        </NavbarItem>
-        <NavbarItem
-          className="hidden md:flex"
-          isActive={pathname === "/projects"}
-        >
-          <Link
-            className="text-black flex gap-2 hover:text-foreground-900"
-            href="/projects"
-            size="md"
-          >
-            <LuFolderHeart />
-            Projects
-          </Link>
+        <NavbarItem>
+          Welcome
         </NavbarItem>
         <NavbarItem className="ml-2 !flex">
           <Link
-            className="text-black flex gap-2 hover:text-foreground-900 text-medium ml-3 bg-[#4D869C]/40 rounded-full px-3 py-3"
-            href="https://cal.com/beaudelaire.ca"
+            className="text-black flex gap-2 hover:text-foreground-900 text-medium ml-3 bg-primary/40 rounded-full px-3 py-3"
+            href="https://cal.com/julius-kamina"
           >
             <LuMessageCircle size={20} />
-            Say Hi
+            Let's Chat
           </Link>
         </NavbarItem>
       </NavbarContent>
-
-      {/* Menu */}
-      <NavbarMenu
-        className="top-[calc(var(--navbar-height)/2)] mx-auto mt-16 max-h-[40vh] max-w-[80vw] rounded-large border-small border-default-200/20 bg-background/60 py-6 shadow-medium backdrop-blur-md backdrop-saturate-150 dark:bg-default-100/50"
-        motionProps={{
-          initial: { opacity: 0, y: -20 },
-          animate: { opacity: 1, y: 0 },
-          exit: { opacity: 0, y: -20 },
-          transition: {
-            ease: "easeInOut",
-            duration: 0.2,
-          },
-        }}
-      >
-        {menuItems.map((item, index) => (
-          <NavbarMenuItem key={`${item}-${index}`}>
-            <Link
-              className="w-full text-black hover:text-primary"
-              href={
-                item.toLowerCase() == "home" ? "/" : `/${item}`.toLowerCase()
-              }
-              size="md"
-              onPress={() => setIsMenuOpen()}
-            >
-              {item}
-            </Link>
-          </NavbarMenuItem>
-        ))}
-      </NavbarMenu>
     </NextUiNavbar>
   );
 }

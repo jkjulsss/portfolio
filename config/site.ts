@@ -1,6 +1,6 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-  name: "Beaudelaire",
-  description: "Beaudelaire Tsoungui Nzodoumkouo's personal website",
+  name: "Julius",
+  description: "Julius's personal website",
 };

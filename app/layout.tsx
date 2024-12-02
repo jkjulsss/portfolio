@@ -1,7 +1,7 @@
 import "@/styles/globals.css";
 import { Metadata, Viewport } from "next";
 import { Link } from "@nextui-org/link";
-import { MdHeartBroken } from "react-icons/md";
+import { IoAirplane } from "react-icons/io5";
 import dynamic from "next/dynamic";
 
 import { Providers } from "./providers";
@@ -54,8 +54,8 @@ export default function RootLayout({
                 href="/"
                 title="nextui.org homepage"
               >
-                <span className="text-default-600">Beaudelaire</span>
-                <MdHeartBroken className="text-red-700" size={20} />
+                <span className="text-default-600">Julius</span>
+                <IoAirplane className="text-primary-700" size={20} />
               </Link>
             </footer>
           </div>

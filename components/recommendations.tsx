@@ -36,11 +36,6 @@ type TestimonialsProps = {
 export default function Recommendations({ testimonials }: TestimonialsProps) {
   return (
     <div className="max-w-4xl mx-auto">
-      <img
-        alt="Adraa"
-        className="w-full h-full mx-auto rounded-lg"
-        src="/aldraa.png"
-      />
       <div className="grid md:grid-cols-2 gap-6 py-8">
         {testimonials.map((testimonial, index) => (
           <TestimonialCard

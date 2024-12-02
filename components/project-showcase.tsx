@@ -22,8 +22,8 @@ export type ProjectProps = {
   title: string;
   description: string;
   stats: { label: string; value: string }[];
-  links: { label: string; url: string; icon?: ReactNode }[];
-  highlights: { imageUrl: string; title: string }[];
+  links?: { label: string; url: string; icon?: ReactNode }[];
+  highlights: { imageUrl: string; title: string, description?: string }[];
   logoUrl: string;
   badgeText?: string;
   badgeInfo?: {
@@ -60,7 +60,8 @@ const ProjectCard = ({
         <div>
           <h2 className="flex items-center justify-between">
             <div className="flex flex-col items-start gap-1 sm:flex-row sm:items-center sm:gap-2">
-              <a
+              {links ? (
+                <a
                 className="text-lg font-medium sm:text-xl"
                 href={links[0]?.url}
                 rel="noreferrer"
@@ -68,6 +69,11 @@ const ProjectCard = ({
               >
                 {title}
               </a>
+              ) : (
+              <p className="text-lg font-medium sm:text-xl">
+                {title}
+              </p>
+              )}
               {badgeText && badgeInfo && (
                 <button
                   className="flex items-center gap-1 rounded-3xl px-2 py-0.5 text-xs transition-colors bg-yellow-400 text-black hover:bg-yellow-600"
@@ -109,9 +115,10 @@ const ProjectCard = ({
               onClick={toggleHighlights}
             >
               {showHighlights ? <IoIosArrowUp /> : <IoIosArrowDown />}
-              <span className="hidden sm:inline-block">Highlights</span>
+              <span className="hidden sm:inline-block">Details</span>
             </button>
           </div>
+          {links && (
           <div className="flex items-center gap-3 text-primary-300">
             {links.map((link, index) => (
               <LinkPreview
@@ -124,6 +131,7 @@ const ProjectCard = ({
               </LinkPreview>
             ))}
           </div>
+          )}
         </div>
         {showHighlights && (
           <div className="-mx-3 -mb-3 mt-2 bg-gradient-to-b to-primary-900 p-3">
@@ -153,12 +161,18 @@ const ProjectCard = ({
                 </button>
               </div>
             </div>
-            <div className="mt-3 flex flex-row overflow-hidden">
+            <div className="mt-3 flex flex-col overflow-hidden">
               <Image
                 alt={title}
-                className="w-full rounded-lg"
+                className="w-full rounded-lg mb-2"
                 src={highlights[currentImageIndex].imageUrl}
               />
+              
+              {highlights[currentImageIndex].description && (
+                <p>
+                  {highlights[currentImageIndex].description}
+                </p>
+              )}
             </div>
           </div>
         )}
@@ -189,53 +203,21 @@ const ProjectCard = ({
 
 export default function ProjectShowcase({
   projects,
-  moreProjects,
 }: {
   projects: ProjectProps[];
-  moreProjects: { title: string; url: string; description: string }[];
 }) {
   return (
     <section>
       <h2 className="text-3xl mb-4">Projects</h2>
       <p className="mb-8">
-        I have worked on a variety of projects over the years; some of them as a
-        hobby, some as a proof of concept, and others to solve my own pain
-        points. Here are some of the projects that I have worked on.
+        This semester I had the priviledge of applying my knowledge of
+        thermodynamics with an excellent group of individuals to create 
+        a miniature vehicle that runs on a thermoelectric engine 
       </p>
       <div>
         {projects.map((project, index) => (
           <ProjectCard key={index} {...project} />
         ))}
-      </div>
-      <div className="mt-10">
-        <h3 className="my-4">
-          Here are some more projects that I have worked on. You can find the
-          complete list of projects on my{" "}
-          <LinkPreview
-            className="font-medium underline decoration-2 underline-offset-2 transition-colors hover:font-bold"
-            url="https://github.com/Tsounguinzo"
-          >
-            GitHub profile
-          </LinkPreview>
-        </h3>
-        <div className="flex flex-col gap-1.5">
-          {moreProjects.map((project, index) => (
-            <LinkPreview
-              key={index}
-              className="flex flex-col flex-wrap items-start rounded-md bg-primary-100 bg-gradient-to-l from-background px-2 py-2 transition-colors hover:bg-primary-100/40 sm:flex-row sm:items-center"
-              url={project.url}
-            >
-              <span className="flex items-center gap-2 font-medium">
-                <BsArrowThroughHeartFill />
-                {project.title}
-              </span>
-              <span className="mx-2 hidden sm:inline-block">-</span>
-              <span className="text-base sm:text-lg">
-                {project.description}
-              </span>
-            </LinkPreview>
-          ))}
-        </div>
       </div>
     </section>
   );

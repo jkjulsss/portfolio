@@ -4,29 +4,56 @@ import { Link } from "@nextui-org/link";
 import Links from "@/components/links";
 import Recommendations from "@/components/recommendations";
 import testimonials from "@/data/testimonials.json";
-import Hidden from "@/components/hidden";
-import FlyfastCard from "@/components/flyfast-card";
+import ProjectShowcase, { ProjectProps } from "@/components/project-showcase";
 
 const socialLinks = {
   heading: "Social",
   links: [
     {
       name: "LinkedIn",
-      url: "https://www.linkedin.com/in/beaudelaire-tsoungui-nzodoumkouo-223810299/",
+      url: "https://www.linkedin.com/in/juliuskamina/",
       icon: <FaLinkedin size={20} />,
     },
     {
       name: "GitHub",
-      url: "https://github.com/Tsounguinzo",
+      url: "https://github.com/jkjulsss",
       icon: <FaGithub size={20} />,
-    },
-    {
-      name: "Instagram",
-      url: "https://www.instagram.com/beaudelaire001/",
-      icon: <FaInstagram size={20} />,
-    },
+    }
   ],
 };
+
+const projects: ProjectProps[] = [
+  {
+    title: "Thermoelectric Car",
+    description:
+        "A miniature vehicle that runs on a thermoelectric engine.",
+    stats: [
+      { label: "Mechanical Efficiency", value: "26.4%" },
+      { label: "Top Speed", value: "102.5mm/s" },
+      { label: "Mechanical Horsepower", value: "7.241519e-5" },
+    ],
+    highlights: [
+      {
+        imageUrl: "/projects/thermo/car1.png",
+        title: "",
+        description: "Developed a miniature thermoelectric vehicle using " +
+        "sustainable materials for the body and wheels. The design incorporates " + 
+        "a Peltier device to convert thermal energy from a tealight into electric " +
+        "power, driving a motor connected to the front wheel. This three-wheeled " +
+        "vehicle highlights the innovative application of themoelectric energy in mobility solutions."
+      },
+      {
+        imageUrl: "/projects/thermo/car2.png",
+        title: "",
+      },
+      {
+        imageUrl: "/projects/thermo/car3.png",
+        title: "",
+      },
+    ],
+    logoUrl: "/projects/thermo/carsss.jpg",
+  },
+];
 
 export default function Home() {
   return (
@@ -34,31 +61,26 @@ export default function Home() {
       <div className="flex flex-col space-y-6">
         <h1 className="text-4xl font-bold">Hello!</h1>
         <p className="text-lg">
-          I&apos;m Beaudelaire, A SOEN Student at Concordia, Montreal.
+          I&apos;m Julius, An Aerospace Engineering Student at Concordia University
         </p>
         <p className="text-lg">
-          I mostly do Full-stack development with an eye for good design and
-          pretty good grasp of all parts of the stack including the frontend,
-          backend, databases, devops, and cloud.
-        </p>
-        <p className="text-lg">
-          I&apos;ll write more about myself here soon.{" "}
-          <Hidden
-            content={
-              <>
-                In the meantime, you can check my{" "}
-                <Link className="underline" href="/projects">
-                  Projects
-                </Link>
-              </>
-            }
-          />
+          I enrolled into Option A: Aerodynamics and Propulsion
+          to explore the principles of flight and engine efficiency, 
+          driving innovation in aerospace technology. My goal is to combine my
+          theoretical and practical skills to contribute to the evolution
+          of cutting edge technologies within the field of Aeronautics. 
         </p>
       </div>
 
-      <FlyfastCard />
+      <img
+        alt="Adraa"
+        className="w-full h-full mx-auto rounded-lg"
+        src="/v2500-2.avif"
+      />
 
       <Links {...socialLinks} />
+
+      <ProjectShowcase projects={projects} />
 
       <Recommendations testimonials={testimonials} />
     </section>
